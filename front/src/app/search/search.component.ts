@@ -12,31 +12,35 @@ export class SearchComponent implements OnInit {
   bills = [{
     id: 1,
     nit: '423442423412525',
-    empresa: 'adadasdasdasdadssad',
+    company: 'adadasdasdasdadssad',
     bill: 'ewrw-23424412423523'
   },{
     id: 2,
     nit: '423442423412525',
-    empresa: 'adadasdasdasdadssad',
+    company: 'adadasdasdasdadssad',
     bill: 'ewrw-23424412423523'
   },{
     id: 3,
     nit: '423442423412525',
-    empresa: 'adadasdasdasdadssad',
+    company: 'adadasdasdasdadssad',
     bill: 'ewrw-23424412423523'
   },{
     id: 4,
     nit: '423442423412525',
-    empresa: 'adadasdasdasdadssad',
+    company: 'adadasdasdasdadssad',
     bill: 'ewrw-23424412423523'
   },{
     id: 5,
     nit: '423442423412525',
-    empresa: 'adadasdasdasdadssad',
+    company: 'adadasdasdasdadssad',
     bill: 'ewrw-23424412423523'
   },]
 
   ngOnInit() {
+  }
+
+  showBill(){
+    alert('fasfafa')
   }
 
 }

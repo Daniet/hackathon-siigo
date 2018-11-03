@@ -8,8 +8,8 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', component: CaptureComponent },
-  { path: 'facture/detail', component: InvoiceDetailComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'bill/detail/:id', component: InvoiceDetailComponent },
+  { path: 'bill', component: SearchComponent }
 ];
 
 @NgModule({
