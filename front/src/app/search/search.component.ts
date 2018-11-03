@@ -12,41 +12,18 @@ export class SearchComponent implements OnInit {
   search:string
 
   constructor(
-    private http:HttpService
+    private httpService:HttpService
   ) { }
 
-  bills = [{
-    id: 1,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },{
-    id: 2,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },{
-    id: 3,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },{
-    id: 4,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },{
-    id: 5,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },]
+  bills:any
 
   ngOnInit() {
   }
 
-  log(){
-    console.log(this.search)
+  submit(){
+    this.httpService.search_bill(this.search).subscribe(data=>{
+      console.log(data)
+    })
   }
 
 }

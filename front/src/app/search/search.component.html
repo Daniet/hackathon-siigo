@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper">
-    <form>
+    <form (submit)="submit()">
       <div class="input-field">
         <input id="search" type="search" name="serach" [(ngModel)]="search" class="center-align" placeholder="Buscar por nit o numero de factura" required>
         <label class="label-icon" for="search">

@@ -1,8 +1,8 @@
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">
-        {{ bill.company }}
+      <a class="brand-logo">
+        {{ company }}
       </a>
     </div>
   </nav>
@@ -10,11 +10,11 @@
 <div class="container">
   <div class="row">
     <div class="input-field col s8 m4 l3">
-      <input placeholder="Placeholder" id="num_bill" type="text" value="{{ bill.num_bill }}">
+      <input placeholder="Placeholder" id="num_bill" type="text" value="{{ num_bill }}">
       <label for="num_bill">Numero de factura</label>
     </div>
     <div class="input-field col s4 m4 l3">
-      <input placeholder="Placeholder" id="box" type="text" value="{{ bill.box }}">
+      <input placeholder="Placeholder" id="box" type="text" value="{{ box }}">
       <label for="box">Caja</label>
     </div>
     <table class="s12 m12 l12">
@@ -34,7 +34,7 @@
               </th>
           </tr>
         </thead>
-        <tbody *ngFor="let product of bill.products">
+        <!-- <tbody *ngFor="let product of bill.products">
           <tr>
             <td>
               {{ product.cant }}
@@ -49,7 +49,7 @@
               {{ product.unit + product.cant }}
             </td>
           </tr>
-        </tbody>
+        </tbody> -->
       </table>
       <table class="col s12 m12 l12 responsive-table">
         <thead>
@@ -71,10 +71,10 @@
         <tbody>
           <tr>
             <td>
-              {{ bill.tax * 100 }}%
+              {{ tax * 100 }}%
             </td>
             <td>
-              {{ bill.way_pay }}
+              {{ way_pay }}
             </td>
             <td>
 
