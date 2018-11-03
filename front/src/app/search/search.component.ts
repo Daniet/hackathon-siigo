@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpService } from '../service/http.service'
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  search:string
+
+  constructor(
+    private http:HttpService
+  ) { }
 
   bills = [{
     id: 1,
@@ -39,8 +45,8 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  showBill(){
-    alert('fasfafa')
+  log(){
+    console.log(this.search)
   }
 
 }
