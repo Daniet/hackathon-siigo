@@ -29,9 +29,16 @@ export class CaptureComponent implements OnInit {
     navigator.mediaDevices.getUserMedia({
       video: true
     }).then(stream=>{
+      console.log(stream)
       video.srcObject = stream
     }).catch(err=>{
       console.log(err)
+    })
+    let cameras = []
+    navigator.mediaDevices.enumerateDevices().then(data=>{
+      for(let x in data){
+        console.log(x, data[x].kind == 'videoinput')
+      }
     })
   }
 
