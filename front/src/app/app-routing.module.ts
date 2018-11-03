@@ -8,7 +8,6 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', component: CaptureComponent },
-  { path: 'search', component: DetailComponent },
   { path: 'facture/detail', component: InvoiceDetailComponent },
   { path: 'search', component: SearchComponent }
 ];
