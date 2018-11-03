@@ -19,8 +19,8 @@ export class InvoiceDetailComponent implements OnInit {
   num_bill:string = null
   box:string = null
 
-  way_pay:number = 43243,
-  pay:number = 423424,
+  way_pay:number = 43243
+  pay:number = 423424
   tax:number = 0.2
 
   bill:any
