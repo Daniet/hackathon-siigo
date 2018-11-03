@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router, ActivatedRoute, Params } from '@angular/router'
+import { HttpService } from '../service/http.service'
+
 @Component({
   selector: 'app-invoice-detail',
   templateUrl: './invoice-detail.component.html',
@@ -7,44 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private httpService:HttpService,
+    private route: ActivatedRoute
+  ) { }
 
-  bill ={
-    company: 'adasdafasfafsqwfafaf',
-    num_bill: 'fna 35353245325325',
-    box: '23',
-    products: [{
-      name: 'fsafasfasf',
-      unit: 4324324,
-      cant: 534
-    },{
-      name: 'fsafasfasf',
-      unit: 4324324,
-      cant: 534
-    },{
-      name: 'fsafasfasf',
-      unit: 4324324,
-      cant: 534
-    },{
-      name: 'fsafasfasf',
-      unit: 4324324,
-      cant: 534
-    },{
-      name: 'fsafasfasf',
-      unit: 4324324,
-      cant: 534
-    }],
-    way_pay: 43243,
-    pay: 423424,
-    tax: 0.2
-  }
+  company:string = null
+  num_bill:string = null
+  box:string = null
+
+  way_pay:number = 43243
+  pay:number = 423424
+  tax:number = 0.2
+
+  bill:any
 
   total:number = 0
   val_products:number = 0
 
   ngOnInit() {
-    this.val_products = this.totalProduct(this.bill.products)
-    this.total = this.cal_total(this.bill.tax, this.val_products)
+    this.bill = this.httpService.get_bill(this.route.snapshot.params.id)
   }
 
   totalProduct(product){
