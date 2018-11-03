@@ -43,7 +43,7 @@ export class InvoiceDetailComponent implements OnInit {
   val_products:number = 0
 
   ngOnInit() {
-    this.val_product = this.totalProduct(this.bill.products)
+    this.val_products = this.totalProduct(this.bill.products)
     this.total = this.cal_total(this.bill.tax, this.val_products)
   }
 
