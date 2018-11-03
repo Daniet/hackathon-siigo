@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpService } from '../service/http.service'
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -7,40 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  search:string
 
-  bills = [{
-    id: 1,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },{
-    id: 2,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },{
-    id: 3,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },{
-    id: 4,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },{
-    id: 5,
-    nit: '423442423412525',
-    company: 'adadasdasdasdadssad',
-    bill: 'ewrw-23424412423523'
-  },]
+  constructor(
+    private httpService:HttpService
+  ) { }
+
+  bills:any
 
   ngOnInit() {
   }
 
-  showBill(){
-    alert('fasfafa')
+  submit(){
+    this.httpService.search_bill(this.search).subscribe(data=>{
+      console.log(data)
+    })
   }
 
 }
